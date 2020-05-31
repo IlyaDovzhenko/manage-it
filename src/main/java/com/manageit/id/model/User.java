@@ -1,13 +1,16 @@
 package com.manageit.id.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(callSuper = false)
 public class User extends BaseEntity {
 
     @Column(name = "username")

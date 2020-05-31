@@ -2,6 +2,7 @@ package com.manageit.id.security.jwt;
 
 import com.manageit.id.model.Role;
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -30,7 +31,9 @@ public class JwtTokenProvider {
 
     private UserDetailsService userDetailsService;
 
-    public JwtTokenProvider(@Qualifier("jwtUserDetailsService") UserDetailsService userDetailsService) {
+    @Autowired
+    @Qualifier("jwtUserDetailsService")
+    public void setUserDetailsService(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
