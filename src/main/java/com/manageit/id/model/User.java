@@ -5,12 +5,10 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode(callSuper = false)
+@Data
 public class User extends BaseEntity {
 
     @Column(name = "username")

@@ -5,7 +5,7 @@ import com.manageit.id.security.jwt.JwtUser;
 import com.manageit.id.security.jwt.JwtUserFactory;
 import com.manageit.id.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,7 +17,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     private final UserService userService;
 
-    public JwtUserDetailsService(UserService userService) {
+    public JwtUserDetailsService(@Lazy UserService userService) {
         this.userService = userService;
     }
 

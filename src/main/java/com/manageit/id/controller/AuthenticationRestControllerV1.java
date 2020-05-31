@@ -36,7 +36,6 @@ public class AuthenticationRestControllerV1 {
 
     @PostMapping("login")
     public ResponseEntity login(@RequestBody AuthenticationRequestDto authRequestDto) {
-
         try {
             String username = authRequestDto.getUsername();
             authenticationManager.authenticate(
@@ -59,5 +58,4 @@ public class AuthenticationRestControllerV1 {
             throw new BadCredentialsException("Invalid username or password");
         }
     }
-
 }
